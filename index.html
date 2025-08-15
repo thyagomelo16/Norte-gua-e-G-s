@@ -438,148 +438,167 @@
                 margin-bottom: 1rem;
             }
 
-            /* Estilos para o título da seção do mapa */
-            .map-section-header {
-                text-align: center;
-                margin-bottom: 1rem;
-                margin-top: 1.5rem;
-            }
 
-            .map-section-header h3 {
-                font-size: 1.8rem;
-                color: #1e3a8a;
-                font-weight: 700;
-                margin: 0;
-            }
         }
 
         }
 
-        /* Esconder título "Localização" em desktop */
+
+
+                    /* Layout do footer para desktop */
         @media (min-width: 769px) {
-            .map-section-header {
-                display: none;
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 3rem;
+                padding: 2.5rem 0;
+            }
+            
+            .footer-logo-section {
+                flex: 0 0 auto;
+            }
+            
+            .footer-info-section {
+                flex: 1;
+                text-align: center;
+                max-width: 500px;
+            }
+            
+            .footer-social-section {
+                flex: 0 0 auto;
+            }
+            
+            .footer-logo-section .logo {
+                flex-direction: row;
+                text-align: left;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .footer-social-section .social-links {
+                justify-content: flex-end;
+                gap: 1.5rem;
             }
         }
 
-            /* Esconder seções desnecessárias no rodapé mobile */
-            .footer-section:nth-child(2),
-            .footer-section:nth-child(3),
-            .footer-section:nth-child(4) {
-                display: none;
-            }
-
-            /* Ajustar layout do footer mobile */
+        /* Layout do footer para mobile */
+        @media (max-width: 768px) {
             .footer-content {
-                grid-template-columns: 1fr;
-                gap: 0;
-                text-align: center;
-                justify-items: center;
-            }
-
-            /* Alinhar informações do rodapé */
-            .footer-section {
-                display: flex;
                 flex-direction: column;
-                align-items: center;
                 justify-content: center;
+                align-items: center;
+                gap: 1.5rem;
+                padding: 1.5rem 0;
+                text-align: center;
+            }
+            
+            .footer-logo-section {
+                flex: none;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-info-section {
+                flex: none;
+                width: 100%;
+                max-width: none;
+                text-align: center;
+            }
+            
+            .footer-social-section {
+                flex: none;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-logo-section .logo {
+                flex-direction: column;
+                text-align: center;
                 gap: 1rem;
-            }
-
-            .footer-section .logo {
-                flex-direction: column;
-                text-align: center;
-                gap: 1.5rem;
                 align-items: center;
             }
-
-            .footer-section .logo .footer-logo {
-                margin: 0;
-                display: block;
-                order: 1;
-                width: 50px;
-                height: 50px;
-                border-radius: 10px;
-                object-fit: contain;
-            }
-
-            .footer-section .logo h3 {
-                margin: 0;
-                text-align: center;
-                order: 2;
-                font-size: 1.4rem;
-            }
-
-            .footer-section .social-links {
+            
+            .footer-social-section .social-links {
                 justify-content: center;
-                gap: 1.5rem;
+                gap: 2rem;
             }
+        }
 
-            .footer-section .contact-item {
-                text-align: center;
-                align-items: center;
-                gap: 0.8rem;
-            }
+                    /* Estilos das seções do rodapé */
+        .footer-logo-section .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-            .footer-section .contact-item .contact-icon {
-                margin: 0;
-            }
+        .footer-logo-section .footer-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            object-fit: contain;
+        }
 
-            .footer-section .contact-item .contact-details {
-                text-align: center;
-            }
+        .footer-logo-section .logo h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
 
-            .footer-section .contact-item .contact-details h3 {
-                margin: 0 0 0.5rem 0;
-                font-size: 1.1rem;
-            }
+        .footer-info-section p {
+            margin: 0;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
 
-            .footer-section .contact-item .contact-details p {
-                margin: 0;
-                font-size: 0.95rem;
-            }
+        .footer-social-section .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
         }
 
         /* Estilos do Logo */
         .logo-img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            border-radius: 8px;
-            margin-right: 15px;
+            width: 22px !important;
+            height: 22px !important;
+            object-fit: contain !important;
+            border-radius: 3px !important;
+            margin-right: 8px !important;
         }
 
         .logo {
             display: flex;
             align-items: center;
+            gap: 6px;
         }
 
         .logo h1 {
-            font-family: 'Outfit', 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 1.8rem;
-            color: #1e3a8a;
-            margin: 0;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 2px 4px rgba(30, 58, 138, 0.1);
-            transition: all 0.3s ease;
+            font-family: 'Outfit', 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            font-size: 1rem !important;
+            color: #1e3a8a !important;
+            margin: 0 !important;
+            letter-spacing: -0.02em !important;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            text-shadow: 0 1px 2px rgba(30, 58, 138, 0.1) !important;
+            transition: all 0.3s ease !important;
         }
 
         .logo h1:hover {
-            transform: scale(1.02);
-            background: linear-gradient(135deg, #1e40af 0%, #60a5fa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            transform: scale(1.02) !important;
+            background: linear-gradient(135deg, #1e40af 0%, #60a5fa 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
         }
 
         @media (max-width: 768px) {
             .logo h1 {
-                font-size: 1.5rem;
+                font-size: 0.9rem !important;
             }
 
             /* Tipografia responsiva para mobile */
@@ -676,18 +695,73 @@
             border-top: 1px solid #4a5568;
             padding-top: 1.5rem;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 2rem;
-            text-align: center;
+        }
+
+        .footer-bottom-left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-bottom-right {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
         }
 
         .footer-bottom-content {
             display: flex;
             align-items: center;
             gap: 8px;
-            justify-content: center;
+        }
+
+        /* Layout lateralizado para desktop */
+        @media (min-width: 769px) {
+            .footer-bottom {
+                text-align: left;
+            }
+            
+            .footer-bottom p:first-child {
+                text-align: left;
+            }
+            
+            .footer-bottom-content {
+                justify-content: flex-end;
+            }
+        }
+
+        /* Manter centralizado no mobile */
+        @media (max-width: 768px) {
+            .footer-bottom {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .footer-bottom-left {
+                flex: none;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-bottom-right {
+                flex: none;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-bottom p:first-child {
+                text-align: center;
+            }
+            
+            .footer-bottom-content {
+                justify-content: center;
+            }
         }
 
         .footer-bottom p {
@@ -803,6 +877,36 @@
             border-bottom-color: #93c5fd;
         }
 
+        /* Layout base do footer - Horizontal em barra */
+        .footer-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid #4a5568;
+        }
+
+        /* Seções do footer */
+        .footer-logo-section {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-info-section {
+            flex: 1;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .footer-social-section {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
         /* Estilos dos links do footer */
         .footer-section a {
             color: #e2e8f0 !important;
@@ -894,7 +998,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="images/logo.jpeg" alt="Logo Norte Água e Gás" class="logo-img">
+                <img src="./images/logo.jpeg" alt="Logo Norte Água e Gás" class="logo-img">
                 <h1>Norte Água e Gás</h1>
             </div>
             <nav class="nav">
@@ -916,14 +1020,14 @@
     <!-- Banner Principal - Desktop -->
     <section id="inicio" class="hero hero-desktop">
         <div class="hero-banner">
-            <img src="images/banner-desktop.jpg" alt="Norte Água e Gás - Banner Principal" class="hero-banner-img">
+            <img src="./images/banner-desktop.jpg" alt="Norte Água e Gás - Banner Principal" class="hero-banner-img">
         </div>
     </section>
 
     <!-- Banner Principal - Mobile -->
     <section id="inicio-mobile" class="hero hero-mobile">
         <div class="hero-image">
-            <img src="images/banner-mobile.jpg" alt="Norte Água e Gás - Banner Mobile" class="hero-banner-img">
+            <img src="./images/banner-mobile.jpg" alt="Norte Água e Gás - Banner Mobile" class="hero-banner-img">
         </div>
     </section>
 
@@ -937,7 +1041,7 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/agua-mineral.jpg" alt="Galões de Água Mineral" class="product-img">
+                        <img src="./images/agua-mineral.jpg" alt="Galões de Água Mineral" class="product-img">
                     </div>
                     <div class="product-content">
                         <h3>Água Mineral</h3>
@@ -952,7 +1056,7 @@
                 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/botijao-gas.jpg" alt="Botijão de Gás - Norte Água e Gás" class="product-img">
+                        <img src="./images/botijao-gas.jpg" alt="Botijão de Gás - Norte Água e Gás" class="product-img">
                     </div>
                     <div class="product-content">
                         <h3>Gás de Cozinha</h3>
@@ -967,7 +1071,7 @@
                 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/entregador.jpg" alt="Entrega Rápida - Norte Água e Gás" class="product-img">
+                        <img src="./images/entregador.jpg" alt="Entrega Rápida - Norte Água e Gás" class="product-img">
                     </div>
                     <div class="product-content">
                         <h3>Entrega Rápida</h3>
@@ -995,7 +1099,7 @@
                     <p>A Norte Água e Gás é uma empresa especializada na entrega de água mineral e gás de cozinha, com anos de experiência no mercado. Nos tornamos referência na região de Paulista-PE pela nossa qualidade, pontualidade e compromisso com o cliente. Oferecemos água mineral natural de excelente qualidade em galões de 10L e 20L, além de gás de cozinha seguro em botijões de 13kg e 45kg. Nossa missão é garantir que você nunca fique sem água ou gás, com entrega rápida e atendimento personalizado todos os dias da semana.</p>
                 </div>
                 <div class="about-image">
-                    <img src="images/fachada.jpeg" alt="Fachada da Norte Água e Gás" class="about-img">
+                    <img src="./images/fachada.jpeg" alt="Fachada da Norte Água e Gás" class="about-img">
                 </div>
             </div>
         </div>
@@ -1060,9 +1164,7 @@
 
                 </div>
                 
-                <div class="map-section-header">
-                    <h3>Localização</h3>
-                </div>
+
                 <div class="map-container">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.1234567890123!2d-34.8770!3d-7.9476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNTYnNTIuMCJTIDM0wrA1MiczNy4yIlc!5e0!3m2!1spt-BR!2sbr!4v1234567890"
@@ -1084,54 +1186,35 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-logo-section">
                     <div class="logo">
-                        <img src="images/logo.jpeg" alt="Logo Norte Água e Gás" class="footer-logo">
+                        <img src="./images/logo.jpeg" alt="Logo Norte Água e Gás" class="footer-logo">
                         <h3>Norte Água e Gás</h3>
                     </div>
+                </div>
+                
+                <div class="footer-info-section">
                     <p>Sua água e gás com rapidez e confiança. Qualidade garantida em cada entrega.</p>
+                </div>
+                
+                <div class="footer-social-section">
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
                         <a href="https://instagram.com/norte_aguaegas" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://wa.me/5581984595795" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#inicio">Início</a></li>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#produtos">Produtos</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Produtos</h4>
-                    <ul>
-                        <li>Água Mineral</li>
-                        <li>Gás de Cozinha</li>
-                        <li>Entrega Rápida</li>
-                        <li>Atendimento 24h</li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contato</h4>
-                    <p><i class="fas fa-phone"></i> (81) 98459-5795</p>
-                    <p><i class="fab fa-whatsapp"></i> (81) 98459-5795</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Paulista - PE</p>
-                </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Norte Água e Gás. Todos os direitos reservados. | CNPJ: 45.918.963/0001-07</p>
-                <div class="footer-bottom-content">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 Norte Água e Gás. Todos os direitos reservados. | CNPJ: 45.918.963/0001-07</p>
+                </div>
+                <div class="footer-bottom-right">
                     <div class="developer-credit">
                         <p>Desenvolvido por <a href="https://www.instagram.com/sistemastgm/" target="_blank" title="Clique para visitar o Instagram da Sistemas TGM"><strong>Sistemas TGM</strong></a></p>
                         <a href="https://www.instagram.com/sistemastgm/" target="_blank" title="Clique para visitar o Instagram da Sistemas TGM">
-                            <img src="images/sistemastgm.png" alt="Sistemas TGM Logo" class="tgm-logo" title="Sistemas TGM" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <img src="./images/sistemastgm.png" alt="Sistemas TGM Logo" class="tgm-logo" title="Sistemas TGM" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                             <span style="display: none; color: #60a5fa; font-weight: bold; font-size: 1.2em;">SISTEMAS TGM</span>
                         </a>
                     </div>
