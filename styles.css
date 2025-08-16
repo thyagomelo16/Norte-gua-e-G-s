@@ -605,7 +605,7 @@ p {
 }
 
 .footer .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -630,29 +630,74 @@ p {
     border-radius: 20px;
 }
 
+/* Novo rodapé minimalista */
 .footer-content {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
     margin-bottom: 3rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 2rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     text-align: center;
+    align-items: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo-img {
+    width: 88px;
+    height: 88px;
+    border-radius: 12px;
+    object-fit: contain;
+    border: 2px solid var(--primary-color);
+}
+
+.footer-logo h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-description {
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 300px;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
 .footer-section h4 {
-    color: var(--primary-color);
+    color: var(--white);
     margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--white);
     padding-bottom: 0.5rem;
     display: inline-block;
-    margin-left: 0;
     text-align: center;
 }
 
@@ -660,86 +705,232 @@ p {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: left;
 }
 
 .footer-section li {
     margin-bottom: 0.8rem;
     padding: 0.3rem 0;
-}
-
-.footer-section a {
-    color: var(--light-gray);
-    text-decoration: none;
-    transition: all 0.3s ease;
+    color: var(--white);
     font-size: 0.95rem;
-    display: inline-block;
-    position: relative;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-.footer-section a:hover {
-    color: var(--primary-color);
-    transform: translateX(8px);
-    text-shadow: 0 2px 4px rgba(30, 58, 138, 0.3);
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.social-link {
-    width: 40px;
-    height: 40px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-link:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-}
-
-.footer-bottom {
-    border-top: 2px solid var(--primary-color);
-    padding-top: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    padding: 0 2rem;
-    text-align: center;
-}
-
-.whatsapp-footer {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.footer-section li i {
+    color: var(--primary-color);
+    width: 16px;
+    text-align: center;
+}
+
+/* Estilos para a seção Trabalhe Conosco no rodapé */
+.careers-simple {
+    text-align: center;
+}
+
+.careers-simple p {
+    color: var(--white);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.careers-email-simple {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
 }
 
-.whatsapp-footer:hover {
-    background: var(--primary-dark);
+.careers-email-simple:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--white);
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.careers-email-simple i {
+    color: var(--white);
+}
+
+/* Seção footer-bottom removida - conteúdo reorganizado */
+
+/* Estilos removidos - não mais necessários */
+
+.copyright-section {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.copyright-section p {
+    color: var(--white);
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.developer-section {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.tgm-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.developer-text {
+    color: var(--white);
+    font-size: 0.85rem;
+    opacity: 0.8;
+    white-space: nowrap;
+}
+
+.developer-info span {
+    color: var(--white);
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.tgm-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tgm-logo:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.tgm-logo-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.tgm-name {
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.tgm-name-link {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.tgm-name-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+/* Responsividade do rodapé */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        align-items: center;
+        justify-items: center;
+    }
+    
+    .footer-credits {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .developer-section {
+        align-items: center;
+    }
+    
+    .tgm-container {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .footer-info {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .footer-brand {
+        align-items: center;
+    }
+    
+    .footer-description {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-section ul {
+        text-align: center;
+    }
+    
+    .footer-section li {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 3rem 0 2rem;
+    }
+    
+    .footer .container {
+        padding: 0 1rem;
+    }
+    
+    .footer-content {
+        gap: 1.5rem;
+    }
+    
+    .footer-logo-img {
+        width: 88px;
+        height: 88px;
+    }
+    
+    .footer-logo h3 {
+        font-size: 1.3rem;
+    }
+    
+    .footer-description {
+        font-size: 0.9rem;
+    }
+    
+    .tgm-logo {
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 0.8rem;
+    }
 }
 
 /* Botão flutuante do WhatsApp */
@@ -821,15 +1012,7 @@ p {
         grid-template-columns: 1fr;
     }
     
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
+    /* Estilos do rodapé já definidos acima */
     
     .whatsapp-float {
         width: 50px;
@@ -908,8 +1091,6 @@ html {
 /* Estados de hover e focus */
 .nav-link:focus,
 .btn:focus,
-.social-link:focus,
-.whatsapp-footer:focus,
 .whatsapp-float:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;

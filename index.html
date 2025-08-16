@@ -13,6 +13,60 @@
     <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
     
     <style>
+        /* Alinhamento justificado para toda a página */
+        body {
+            text-align: justify;
+        }
+
+        /* Manter centralização para títulos e elementos específicos */
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center !important;
+        }
+
+        .section-header h2,
+        .section-header p {
+            text-align: center !important;
+        }
+
+        .logo h1 {
+            text-align: left !important;
+        }
+
+        .nav-menu {
+            text-align: center !important;
+        }
+
+        .nav-menu li {
+            text-align: center !important;
+        }
+
+        .footer-content {
+            text-align: center !important;
+        }
+
+        .footer-bottom {
+            text-align: center !important;
+        }
+
+        .careers * {
+            text-align: center !important;
+        }
+
+        /* Justificar textos de conteúdo específicos */
+        .about-content p,
+        .product-content p,
+        .contact-item p,
+        .footer-info-section p {
+            text-align: justify !important;
+        }
+
+        /* Manter centralização para elementos de destaque */
+        .popup h2,
+        .popup p,
+        .popup-buttons {
+            text-align: center !important;
+        }
+
         /* Estilos do Popup de Desconto */
         .popup-overlay {
             position: fixed;
@@ -289,6 +343,93 @@
             display: none;
         }
 
+        /* Estilos para o banner duplo desktop */
+        .hero-banner-container {
+            display: flex;
+            width: 200%;
+            transition: transform 0.5s ease-in-out;
+            overflow: hidden;
+        }
+
+        .hero-banner {
+            flex: 0 0 50%;
+            width: 50%;
+            height: 510px;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Indicadores de navegação do banner */
+        .banner-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        /* Indicadores específicos para mobile */
+        .hero-mobile .banner-indicators {
+            bottom: 15px;
+        }
+
+        .banner-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .banner-indicator.active {
+            background: #ffffff;
+            transform: scale(1.2);
+        }
+
+        /* Botões de navegação do banner */
+        .banner-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            border: none;
+            padding: 15px 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .banner-nav:hover {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .banner-nav.prev {
+            left: 20px;
+        }
+
+        .banner-nav.next {
+            right: 20px;
+        }
+
+        /* Container relativo para posicionar os controles */
+        .hero-banner-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
         .btn-secondary {
             background: #6c757d;
             color: white;
@@ -325,7 +466,7 @@
         .hero-banner {
             width: 100%;
             height: 510px;
-            overflow: visible;
+            overflow: hidden;
             margin: 0;
             padding: 0;
         }
@@ -351,10 +492,15 @@
             margin-top: 2rem;
         }
 
-        .hero-mobile .hero-image {
+        .hero-mobile .hero-banner-wrapper {
             width: 100%;
             margin: 0;
             padding: 0;
+        }
+
+        .hero-mobile .hero-banner {
+            height: auto;
+            min-height: 300px;
         }
 
         .hero-mobile .hero-banner-img {
@@ -445,118 +591,7 @@
 
 
 
-                    /* Layout do footer para desktop */
-        @media (min-width: 769px) {
-            .footer-content {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                gap: 3rem;
-                padding: 2.5rem 0;
-            }
-            
-            .footer-logo-section {
-                flex: 0 0 auto;
-            }
-            
-            .footer-info-section {
-                flex: 1;
-                text-align: center;
-                max-width: 500px;
-            }
-            
-            .footer-social-section {
-                flex: 0 0 auto;
-            }
-            
-            .footer-logo-section .logo {
-                flex-direction: row;
-                text-align: left;
-                gap: 1rem;
-                align-items: center;
-            }
-            
-            .footer-social-section .social-links {
-                justify-content: flex-end;
-                gap: 1.5rem;
-            }
-        }
 
-        /* Layout do footer para mobile */
-        @media (max-width: 768px) {
-            .footer-content {
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 1.5rem;
-                padding: 1.5rem 0;
-                text-align: center;
-            }
-            
-            .footer-logo-section {
-                flex: none;
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .footer-info-section {
-                flex: none;
-                width: 100%;
-                max-width: none;
-                text-align: center;
-            }
-            
-            .footer-social-section {
-                flex: none;
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .footer-logo-section .logo {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-                align-items: center;
-            }
-            
-            .footer-social-section .social-links {
-                justify-content: center;
-                gap: 2rem;
-            }
-        }
-
-                    /* Estilos das seções do rodapé */
-        .footer-logo-section .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .footer-logo-section .footer-logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            object-fit: contain;
-        }
-
-        .footer-logo-section .logo h3 {
-            margin: 0;
-            font-size: 1.4rem;
-            color: #ffffff;
-        }
-
-        .footer-info-section p {
-            margin: 0;
-            color: #e2e8f0;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .footer-social-section .social-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-        }
 
         /* Estilos do Logo */
         .logo-img {
@@ -652,11 +687,138 @@
                 padding: 10px 20px;
             }
 
-            .about-content p {
-                font-size: 1rem !important;
-                line-height: 1.7;
+                    .about-content p {
+            font-size: 1rem !important;
+            line-height: 1.7;
+        }
+
+        /* Estilos para a seção Trabalhe Conosco */
+        .careers {
+            padding: 3rem 0;
+            background: #ffffff;
+            text-align: center;
+            border-top: 3px solid #1e3a8a;
+            border-bottom: 3px solid #1e3a8a;
+        }
+
+        .careers .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .careers .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .careers .section-header h2 {
+            color: #1e3a8a;
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .careers .section-header p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+
+        .careers-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .careers-contact {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .careers-contact h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .careers-contact p {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .email-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 1rem auto;
+            padding: 1.2rem 1.5rem;
+            background: #1e3a8a;
+            border-radius: 8px;
+            color: white;
+            max-width: 400px;
+            border: 2px solid #1e3a8a;
+            transition: all 0.2s ease;
+        }
+
+        .email-contact:hover {
+            background: #ffffff;
+            color: #1e3a8a;
+            border-color: #1e3a8a;
+        }
+
+        .email-contact i {
+            font-size: 1.2rem;
+            color: inherit;
+        }
+
+        .careers-email {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .careers-email:hover {
+            color: inherit;
+        }
+
+
+
+
+
+        /* Responsividade para Trabalhe Conosco */
+        @media (max-width: 768px) {
+            .careers-content {
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+
+            .careers-contact h3 {
+                font-size: 1.3rem;
+            }
+
+            .email-contact {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.8rem;
+                margin: 1rem auto;
+                max-width: 90%;
             }
         }
+    }
 
         /* Ajustes para telas muito pequenas */
         @media (max-width: 480px) {
@@ -690,263 +852,9 @@
             }
         }
 
-        /* Estilos do Footer Bottom */
-        .footer-bottom {
-            border-top: 1px solid #4a5568;
-            padding-top: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
 
-        .footer-bottom-left {
-            flex: 1;
-            display: flex;
-            align-items: center;
-        }
 
-        .footer-bottom-right {
-            flex: 0 0 auto;
-            display: flex;
-            align-items: center;
-        }
 
-        .footer-bottom-content {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Layout lateralizado para desktop */
-        @media (min-width: 769px) {
-            .footer-bottom {
-                text-align: left;
-            }
-            
-            .footer-bottom p:first-child {
-                text-align: left;
-            }
-            
-            .footer-bottom-content {
-                justify-content: flex-end;
-            }
-        }
-
-        /* Manter centralizado no mobile */
-        @media (max-width: 768px) {
-            .footer-bottom {
-                flex-direction: column;
-                justify-content: center;
-                text-align: center;
-                gap: 1rem;
-            }
-            
-            .footer-bottom-left {
-                flex: none;
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .footer-bottom-right {
-                flex: none;
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .footer-bottom p:first-child {
-                text-align: center;
-            }
-            
-            .footer-bottom-content {
-                justify-content: center;
-            }
-        }
-
-        .footer-bottom p {
-            color: #ffffff !important;
-            margin: 0;
-            font-size: 0.8rem;
-            opacity: 0.9;
-        }
-
-        .developer-credit {
-            color: #ffffff !important;
-            font-size: 0.9rem;
-        }
-
-        .developer-credit strong {
-            color: #60a5fa !important;
-            font-weight: 700;
-            text-shadow: 0 1px 2px rgba(96, 165, 250, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .developer-credit strong:hover {
-            color: #93c5fd !important;
-            transform: scale(1.05);
-            text-shadow: 0 2px 4px rgba(96, 165, 250, 0.5);
-        }
-
-        .developer-credit a {
-            text-decoration: none;
-            color: inherit;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .developer-credit {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .developer-credit p {
-            margin: 0;
-        }
-
-        .tgm-logo {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 1px 2px rgba(96, 165, 250, 0.1));
-            cursor: pointer;
-        }
-
-        .tgm-logo:hover {
-            transform: scale(1.1);
-            filter: drop-shadow(0 4px 8px rgba(96, 165, 250, 0.4));
-        }
-
-        /* Estilos para o link da logo */
-        .developer-credit a:has(img) {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-        }
-
-        .developer-credit a:has(img):hover {
-            transform: scale(1.02);
-        }
-
-        /* Debug: Garantir que a logo seja visível */
-        .tgm-logo {
-            min-width: 60px;
-            min-height: 60px;
-            max-width: 80px;
-            max-height: 80px;
-        }
-
-        .developer-credit a:hover {
-            text-decoration: none;
-            transform: translateY(-2px);
-        }
-
-        .developer-credit a:not(:has(img))::after {
-            content: '🔗';
-            font-size: 0.8em;
-            margin-left: 3px;
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-
-        .developer-credit a:hover::after {
-            opacity: 1;
-            transform: scale(1.2);
-        }
-
-        .developer-credit strong {
-            color: #60a5fa !important;
-            font-weight: 700;
-            text-shadow: 0 1px 2px rgba(96, 165, 250, 0.3);
-            transition: all 0.3s ease;
-            border-bottom: 2px dotted #60a5fa;
-            padding-bottom: 2px;
-        }
-
-        .developer-credit strong:hover {
-            color: #93c5fd !important;
-            transform: scale(1.05);
-            text-shadow: 0 2px 4px rgba(96, 165, 250, 0.5);
-            border-bottom-color: #93c5fd;
-        }
-
-        /* Layout base do footer - Horizontal em barra */
-        .footer-content {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-            padding: 2rem 0;
-            border-bottom: 1px solid #4a5568;
-        }
-
-        /* Seções do footer */
-        .footer-logo-section {
-            flex: 0 0 auto;
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-info-section {
-            flex: 1;
-            text-align: center;
-            max-width: 400px;
-        }
-
-        .footer-social-section {
-            flex: 0 0 auto;
-            display: flex;
-            align-items: center;
-        }
-
-        /* Estilos dos links do footer */
-        .footer-section a {
-            color: #e2e8f0 !important;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: #60a5fa !important;
-            transform: translateX(5px);
-        }
-
-        /* Estilos dos títulos das seções do footer */
-        .footer-section h4 {
-            color: #60a5fa !important;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            text-shadow: 0 1px 2px rgba(96, 165, 250, 0.2);
-        }
-
-        /* Estilos dos parágrafos do footer */
-        .footer-section p {
-            color: #ffffff !important;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        /* Estilos específicos para a seção de contato */
-        .footer-section .contact-item p {
-            color: #ffffff !important;
-            margin-bottom: 0.3rem;
-        }
-
-        .footer-section .contact-item h3 {
-            color: #60a5fa !important;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-        }
 
         /* Media Queries para Responsividade */
         @media (max-width: 768px) {
@@ -956,6 +864,21 @@
 
             .hero-mobile {
                 display: block;
+            }
+
+            /* Ajustar controles do banner para mobile */
+            .banner-nav {
+                padding: 12px 8px;
+                font-size: 16px;
+            }
+            
+            .banner-indicators {
+                bottom: 15px;
+            }
+            
+            .banner-indicator {
+                width: 10px;
+                height: 10px;
             }
 
             .mobile-buttons {
@@ -1019,15 +942,57 @@
 
     <!-- Banner Principal - Desktop -->
     <section id="inicio" class="hero hero-desktop">
-        <div class="hero-banner">
-            <img src="./images/banner-desktop.jpg" alt="Norte Água e Gás - Banner Principal" class="hero-banner-img">
+        <div class="hero-banner-wrapper">
+            <div class="hero-banner-container" id="bannerContainer">
+                <div class="hero-banner">
+                    <img src="./images/banner-desktop.jpg" alt="Norte Água e Gás - Banner Principal" class="hero-banner-img">
+                </div>
+                <div class="hero-banner">
+                    <img src="./images/2banner-desktop.jpg" alt="Norte Água e Gás - Banner Secundário" class="hero-banner-img">
+                </div>
+            </div>
+            
+            <!-- Botões de navegação -->
+            <button class="banner-nav prev" onclick="changeBanner(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="banner-nav next" onclick="changeBanner(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Indicadores -->
+            <div class="banner-indicators">
+                <div class="banner-indicator active" onclick="goToBanner(0)"></div>
+                <div class="banner-indicator" onclick="goToBanner(1)"></div>
+            </div>
         </div>
     </section>
 
     <!-- Banner Principal - Mobile -->
     <section id="inicio-mobile" class="hero hero-mobile">
-        <div class="hero-image">
-            <img src="./images/banner-mobile.jpg" alt="Norte Água e Gás - Banner Mobile" class="hero-banner-img">
+        <div class="hero-banner-wrapper">
+            <div class="hero-banner-container" id="bannerContainerMobile">
+                <div class="hero-banner">
+                    <img src="./images/banner-mobile.jpg" alt="Norte Água e Gás - Banner Mobile" class="hero-banner-img">
+                </div>
+                <div class="hero-banner">
+                    <img src="./images/2banner-mobile.jpg" alt="Norte Água e Gás - Banner Mobile Secundário" class="hero-banner-img">
+                </div>
+            </div>
+            
+            <!-- Botões de navegação mobile -->
+            <button class="banner-nav prev" onclick="changeBannerMobile(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="banner-nav next" onclick="changeBannerMobile(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Indicadores mobile -->
+            <div class="banner-indicators">
+                <div class="banner-indicator active" onclick="goToBannerMobile(0)"></div>
+                <div class="banner-indicator" onclick="goToBannerMobile(1)"></div>
+            </div>
         </div>
     </section>
 
@@ -1045,7 +1010,7 @@
                     </div>
                     <div class="product-content">
                         <h3>Água Mineral</h3>
-                        <p>Água mineral natural de excelente qualidade, disponível em galões de 20L. Garantimos pureza e frescor em cada entrega.</p>
+                        <p style="text-align: justify;">Água mineral natural de excelente qualidade, disponível em galões de 20L. Garantimos pureza e frescor em cada entrega.</p>
                         <ul>
                             <li><i class="fas fa-check"></i> Galão 20L</li>
                             <li><i class="fas fa-check"></i> Qualidade garantida</li>
@@ -1060,7 +1025,7 @@
                     </div>
                     <div class="product-content">
                         <h3>Gás de Cozinha</h3>
-                        <p>Gás de cozinha de alta qualidade, disponível em botijões de 13kg. Segurança e eficiência para suas refeições.</p>
+                        <p style="text-align: justify;">Gás de cozinha de alta qualidade, disponível em botijões de 13kg. Segurança e eficiência para suas refeições.</p>
                         <ul>
                             <li><i class="fas fa-check"></i> Botijão 13kg</li>
                             <li><i class="fas fa-check"></i> Segurança total</li>
@@ -1075,7 +1040,7 @@
                     </div>
                     <div class="product-content">
                         <h3>Entrega Rápida</h3>
-                        <p>Serviço de entrega ágil e pontual, garantindo que você nunca fique sem água ou gás. Atendimento de segunda a domingo com horários específicos.</p>
+                        <p style="text-align: justify;">Serviço de entrega ágil e pontual, garantindo que você nunca fique sem água ou gás. Atendimento de segunda a domingo com horários específicos.</p>
                         <ul>
                             <li><i class="fas fa-check"></i> Entrega em até 2h</li>
                             <li><i class="fas fa-check"></i> Segunda a Sexta: 07:30 às 17:30</li>
@@ -1097,7 +1062,7 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>A Norte Água e Gás é uma empresa especializada na entrega de água mineral e gás de cozinha, com 10 anos de experiência no mercado. Nos tornamos referência na região de Paulista-PE pela nossa qualidade, pontualidade e compromisso com o cliente. Oferecemos água mineral natural de excelente qualidade em galões de 20L, além de gás de cozinha seguro em botijões de 13kg. Nossa missão é garantir que você nunca fique sem água ou gás, com entrega rápida e atendimento personalizado de segunda a domingo.</p>
+                    <p style="text-align: justify;">A Norte Água e Gás é uma empresa especializada na entrega de água mineral e gás de cozinha, com 10 anos de experiência no mercado. Nos tornamos referência na região de Paulista-PE pela nossa qualidade, pontualidade e compromisso com o cliente. Oferecemos água mineral natural de excelente qualidade em galões de 20L, além de gás de cozinha seguro em botijões de 13kg. Nossa missão é garantir que você nunca fique sem água ou gás, com entrega rápida e atendimento personalizado de segunda a domingo.</p>
                 </div>
                 <div class="about-image">
                     <img src="./images/fachada.jpeg" alt="Fachada da Norte Água e Gás" class="about-img">
@@ -1105,8 +1070,6 @@
             </div>
         </div>
     </section>
-
-
 
 
 
@@ -1125,8 +1088,8 @@
                         </div>
                         <div class="contact-details">
                             <h3>Telefone</h3>
-                            <p>(81) 98459-5795</p>
-                            <p>(81) 99525-7193</p>
+                            <p style="text-align: justify;">(81) 98459-5795</p>
+                            <p style="text-align: justify;">(81) 99525-7193</p>
                         </div>
                     </div>
                     
@@ -1136,8 +1099,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>WhatsApp</h3>
-                            <p>(81) 98459-5795</p>
-                            <p>(81) 99525-7193</p>
+                            <p style="text-align: justify;">(81) 98459-5795</p>
                             <a href="https://wa.me/5581984595795" class="whatsapp-link" target="_blank">
                                 Enviar mensagem
                             </a>
@@ -1150,7 +1112,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Endereço</h3>
-                            <p>R. São José do Egito, 1326<br>Bairro Pau Amarelo<br>Paulista - PE, 53.435-600</p>
+                            <p style="text-align: justify;">R. São José do Egito, 1326<br>Bairro Pau Amarelo<br>Paulista - PE, 53.435-600</p>
                         </div>
                     </div>
                     
@@ -1160,9 +1122,9 @@
                         </div>
                         <div class="contact-details">
                             <h3>Horário de Atendimento</h3>
-                            <p><strong>Segunda a Sexta:</strong> 07:30 às 17:30</p>
-                            <p><strong>Sábado:</strong> 07:30 às 17:00</p>
-                            <p><strong>Domingo:</strong> 07:30 às 12:00</p>
+                            <p style="text-align: justify;"><strong>Segunda a Sexta:</strong> 07:30 às 17:30</p>
+                            <p style="text-align: justify;"><strong>Sábado:</strong> 07:30 às 17:00</p>
+                            <p style="text-align: justify;"><strong>Domingo:</strong> 07:30 às 12:00</p>
                         </div>
                     </div>
                     
@@ -1185,43 +1147,44 @@
         </div>
     </section>
 
-
-
     <!-- Rodapé -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo-section">
-                    <div class="logo">
-                        <img src="./images/logo.jpeg" alt="Logo Norte Água e Gás" class="footer-logo">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="./images/logo.jpeg" alt="Logo Norte Água e Gás" class="footer-logo-img">
                         <h3>Norte Água e Gás</h3>
                     </div>
-                </div>
-                
-                <div class="footer-info-section">
-                    <p>Sua água e gás com rapidez e confiança. Qualidade garantida em cada entrega.</p>
-                </div>
-                
-                <div class="footer-social-section">
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="https://instagram.com/norte_aguaegas" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/5581984595795" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <p class="footer-description">
+                        Sua água e gás com rapidez e confiança. Atendimento de qualidade desde 2014.
+                    </p>
+                    <div class="copyright-section">
+                        <p>&copy; 2024 Norte Água e Gás. Todos os direitos reservados.</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-bottom-left">
-                    <p>&copy; 2024 Norte Água e Gás. Todos os direitos reservados. | CNPJ: 45.918.963/0001-07</p>
-                </div>
-                <div class="footer-bottom-right">
-                    <div class="developer-credit">
-                        <p>Desenvolvido por <a href="https://www.instagram.com/sistemastgm/" target="_blank" title="Clique para visitar o Instagram da Sistemas TGM"><strong>Sistemas TGM</strong></a></p>
-                        <a href="https://www.instagram.com/sistemastgm/" target="_blank" title="Clique para visitar o Instagram da Sistemas TGM">
-                            <img src="./images/sistemastgm.png" alt="Sistemas TGM Logo" class="tgm-logo" title="Sistemas TGM" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                            <span style="display: none; color: #60a5fa; font-weight: bold; font-size: 1.2em;">SISTEMAS TGM</span>
-                        </a>
+                
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h4>Trabalhe Conosco</h4>
+                        <div class="careers-simple">
+                            <p>Envie seu currículo para:</p>
+                            <a href="mailto:contato@norteaguaegas.com.br" class="careers-email-simple">
+                                <i class="fas fa-envelope"></i>
+                                contato@norteaguaegas.com.br
+                            </a>
+                        </div>
+                        <div class="developer-section">
+                            <div class="tgm-container">
+                                <span class="developer-text">Criado e Desenvolvido por</span>
+                                <div class="tgm-logo">
+                                    <img src="./images/sistemastgm.png" alt="Sistemas TGM" class="tgm-logo-img">
+                                    <a href="https://www.instagram.com/sistemastgm/" target="_blank" class="tgm-name-link">
+                                        <span class="tgm-name">Sistemas TGM</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1232,6 +1195,11 @@
     <a href="https://wa.me/5581984595795" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Botão flutuante para voltar ao topo -->
+    <button class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="config.js"></script>
     <script src="script.js"></script>
@@ -1274,6 +1242,110 @@
             if (e.key === 'Escape') {
                 closePopup();
             }
+        });
+
+        // Função para voltar ao topo
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Controle dos banners desktop
+        let currentBanner = 0;
+        const totalBanners = 2;
+        let bannerInterval;
+
+        // Controle dos banners mobile
+        let currentBannerMobile = 0;
+        let bannerMobileInterval;
+
+        function changeBanner(direction) {
+            currentBanner = (currentBanner + direction + totalBanners) % totalBanners;
+            updateBanner();
+        }
+
+        function goToBanner(index) {
+            currentBanner = index;
+            updateBanner();
+        }
+
+        function updateBanner() {
+            const container = document.getElementById('bannerContainer');
+            const indicators = document.querySelectorAll('.hero-desktop .banner-indicator');
+            
+            // Atualiza a posição do banner
+            container.style.transform = `translateX(-${currentBanner * 50}%)`;
+            
+            // Atualiza os indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentBanner);
+            });
+        }
+
+        // Funções para o banner mobile
+        function changeBannerMobile(direction) {
+            currentBannerMobile = (currentBannerMobile + direction + totalBanners) % totalBanners;
+            updateBannerMobile();
+        }
+
+        function goToBannerMobile(index) {
+            currentBannerMobile = index;
+            updateBannerMobile();
+        }
+
+        function updateBannerMobile() {
+            const container = document.getElementById('bannerContainerMobile');
+            const indicators = document.querySelectorAll('.hero-mobile .banner-indicator');
+            
+            // Atualiza a posição do banner
+            container.style.transform = `translateX(-${currentBannerMobile * 50}%)`;
+            
+            // Atualiza os indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentBannerMobile);
+            });
+        }
+
+        // Auto-play dos banners desktop
+        function startBannerAutoPlay() {
+            bannerInterval = setInterval(() => {
+                changeBanner(1);
+            }, 5000); // Troca a cada 5 segundos
+        }
+
+        function stopBannerAutoPlay() {
+            clearInterval(bannerInterval);
+        }
+
+        // Auto-play dos banners mobile
+        function startBannerMobileAutoPlay() {
+            bannerMobileInterval = setInterval(() => {
+                changeBannerMobile(1);
+            }, 5000); // Troca a cada 5 segundos
+        }
+
+        function stopBannerMobileAutoPlay() {
+            clearInterval(bannerMobileInterval);
+        }
+
+        // Iniciar auto-play quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            startBannerAutoPlay();
+            startBannerMobileAutoPlay();
+            
+            // Pausar auto-play quando o mouse estiver sobre o banner desktop
+            const bannerWrapper = document.querySelector('.hero-desktop .hero-banner-wrapper');
+            bannerWrapper.addEventListener('mouseenter', stopBannerAutoPlay);
+            bannerWrapper.addEventListener('mouseenter', stopBannerMobileAutoPlay);
+            bannerWrapper.addEventListener('mouseleave', startBannerAutoPlay);
+            bannerWrapper.addEventListener('mouseleave', startBannerMobileAutoPlay);
+            
+            // Pausar auto-play quando o mouse estiver sobre o banner mobile
+            const bannerMobileWrapper = document.querySelector('.hero-mobile .hero-banner-wrapper');
+            bannerMobileWrapper.addEventListener('mouseenter', stopBannerMobileAutoPlay);
+            bannerMobileWrapper.addEventListener('mouseleave', startBannerMobileAutoPlay);
         });
     </script>
 </body>
