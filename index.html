@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
     
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KZKCCZ7Q');</script>
+    <!-- End Google Tag Manager -->
+    
     <style>
         /* Alinhamento justificado para toda a página */
         body {
@@ -50,6 +58,161 @@
 
         .careers * {
             text-align: center !important;
+        }
+
+        /* Estilos do rodapé - Modelo 1: Layout com Cards (Azul) */
+        .footer {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 3rem 0 1rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .footer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo-img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .footer-brand h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .footer-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #e2e8f0;
+            margin: 0;
+        }
+
+        .footer-card h4 {
+            margin: 0 0 1rem 0;
+            font-size: 1.2rem;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .footer-card h4 i {
+            color: #60a5fa;
+        }
+
+        .footer-card p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            color: #e2e8f0;
+        }
+
+        .careers-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(96, 165, 250, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .careers-email:hover {
+            color: #ffffff;
+            background: rgba(96, 165, 250, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .developer-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .developer-info span {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+
+        .tgm-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tgm-logo-img {
+            width: 25px;
+            height: 25px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .tgm-name-link {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .tgm-name-link:hover {
+            color: #60a5fa;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+        }
+
+        /* Alinhamento dos títulos de contato no desktop */
+        .contact-details h3 {
+            text-align: left !important;
+            margin: 0 0 0.5rem 0;
+        }
+
+        /* Exceção para títulos de contato - sobrescrever regra global */
+        .contact-item .contact-details h3 {
+            text-align: left !important;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #cbd5e1;
         }
 
         /* Justificar textos de conteúdo específicos */
@@ -343,17 +506,13 @@
             display: none;
         }
 
-        /* Estilos para o banner duplo desktop */
+        /* Estilos para o banner único */
         .hero-banner-container {
-            display: flex;
-            width: 200%;
-            transition: transform 0.5s ease-in-out;
-            overflow: hidden;
+            width: 100%;
         }
 
         .hero-banner {
-            flex: 0 0 50%;
-            width: 50%;
+            width: 100%;
             height: 510px;
             overflow: hidden;
             margin: 0;
@@ -367,67 +526,13 @@
             display: block;
         }
 
-        /* Indicadores de navegação do banner */
-        .banner-indicators {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
 
-        /* Indicadores específicos para mobile */
-        .hero-mobile .banner-indicators {
-            bottom: 15px;
-        }
 
-        .banner-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
 
-        .banner-indicator.active {
-            background: #ffffff;
-            transform: scale(1.2);
-        }
 
-        /* Botões de navegação do banner */
-        .banner-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.3);
-            color: white;
-            border: none;
-            padding: 15px 10px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .banner-nav:hover {
-            background: rgba(0, 0, 0, 0.6);
-        }
-
-        .banner-nav.prev {
-            left: 20px;
-        }
-
-        .banner-nav.next {
-            right: 20px;
-        }
-
-        /* Container relativo para posicionar os controles */
+        /* Container do banner */
         .hero-banner-wrapper {
             position: relative;
-            overflow: hidden;
         }
 
         .btn-secondary {
@@ -866,20 +971,7 @@
                 display: block;
             }
 
-            /* Ajustar controles do banner para mobile */
-            .banner-nav {
-                padding: 12px 8px;
-                font-size: 16px;
-            }
-            
-            .banner-indicators {
-                bottom: 15px;
-            }
-            
-            .banner-indicator {
-                width: 10px;
-                height: 10px;
-            }
+
 
             .mobile-buttons {
                 flex-direction: column;
@@ -890,10 +982,81 @@
                 margin-left: 0;
                 margin-top: 10px;
             }
+
+            /* Centralizar números de telefone e WhatsApp no mobile */
+            .contact-item:nth-child(1) .contact-details p,
+            .contact-item:nth-child(2) .contact-details p {
+                text-align: center !important;
+            }
+
+            /* Centralizar endereço e horário no mobile */
+            .contact-item:nth-child(3) .contact-details p,
+            .contact-item:nth-child(4) .contact-details p {
+                text-align: center !important;
+            }
+
+            /* Estilos responsivos do rodapé para mobile */
+            .footer {
+                padding: 2rem 0 1rem 0;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-card {
+                padding: 1.2rem;
+            }
+
+            .footer-brand {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .footer-logo-img {
+                width: 55px;
+                height: 55px;
+            }
+
+            .footer-brand h3 {
+                font-size: 1.3rem;
+            }
+
+            .footer-description {
+                font-size: 0.9rem;
+            }
+
+            .footer-card h4 {
+                font-size: 1.1rem;
+            }
+
+            .footer-card p {
+                font-size: 0.85rem;
+            }
+
+            .tgm-logo-img {
+                width: 22px;
+                height: 22px;
+            }
+
+            .tgm-name-link {
+                font-size: 0.85rem;
+            }
+
+            /* Centralizar títulos de contato no mobile */
+            .contact-item .contact-details h3 {
+                text-align: center !important;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZKCCZ7Q"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <!-- Popup de Desconto -->
     <div class="popup-overlay" id="discountPopup">
         <div class="popup">
@@ -947,24 +1110,9 @@
                 <div class="hero-banner">
                     <img src="./images/banner-desktop.jpg" alt="Norte Água e Gás - Banner Principal" class="hero-banner-img">
                 </div>
-                <div class="hero-banner">
-                    <img src="./images/2banner-desktop.jpg" alt="Norte Água e Gás - Banner Secundário" class="hero-banner-img">
-                </div>
             </div>
             
-            <!-- Botões de navegação -->
-            <button class="banner-nav prev" onclick="changeBanner(-1)">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="banner-nav next" onclick="changeBanner(1)">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            
-            <!-- Indicadores -->
-            <div class="banner-indicators">
-                <div class="banner-indicator active" onclick="goToBanner(0)"></div>
-                <div class="banner-indicator" onclick="goToBanner(1)"></div>
-            </div>
+
         </div>
     </section>
 
@@ -975,24 +1123,9 @@
                 <div class="hero-banner">
                     <img src="./images/banner-mobile.jpg" alt="Norte Água e Gás - Banner Mobile" class="hero-banner-img">
                 </div>
-                <div class="hero-banner">
-                    <img src="./images/2banner-mobile.jpg" alt="Norte Água e Gás - Banner Mobile Secundário" class="hero-banner-img">
-                </div>
             </div>
             
-            <!-- Botões de navegação mobile -->
-            <button class="banner-nav prev" onclick="changeBannerMobile(-1)">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="banner-nav next" onclick="changeBannerMobile(1)">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            
-            <!-- Indicadores mobile -->
-            <div class="banner-indicators">
-                <div class="banner-indicator active" onclick="goToBannerMobile(0)"></div>
-                <div class="banner-indicator" onclick="goToBannerMobile(1)"></div>
-            </div>
+
         </div>
     </section>
 
@@ -1045,7 +1178,7 @@
                             <li><i class="fas fa-check"></i> Entrega em até 2h</li>
                             <li><i class="fas fa-check"></i> Segunda a Sexta: 07:30 às 17:30</li>
                             <li><i class="fas fa-check"></i> Sábado: 07:30 às 17:00</li>
-                            <li><i class="fas fa-check"></i> Domingo: 07:30 às 12:00</li>
+                            <li><i class="fas fa-check"></i> Domingo e Feriados: 07:30 às 12:00</li>
                         </ul>
                     </div>
                 </div>
@@ -1126,7 +1259,7 @@
                             <h3>Horário de Atendimento</h3>
                             <p><strong>Segunda a Sexta:</strong> 07:30 às 17:30</p>
                             <p><strong>Sábado:</strong> 07:30 às 17:00</p>
-                            <p><strong>Domingo:</strong> 07:30 às 12:00</p>
+                            <p><strong>Domingo e Feriados:</strong> 07:30 às 12:00</p>
                         </div>
                     </div>
                     
@@ -1153,42 +1286,43 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
+                <!-- Card da Empresa -->
+                <div class="footer-card">
+                    <div class="footer-brand">
                         <img src="./images/logo.jpeg" alt="Logo Norte Água e Gás" class="footer-logo-img">
                         <h3>Norte Água e Gás</h3>
                     </div>
-                    <p class="footer-description">
-                        Sua água e gás com rapidez e confiança. Atendimento de qualidade desde 2014.
-                    </p>
-                    <div class="copyright-section">
-                        <p>&copy; 2024 Norte Água e Gás. Todos os direitos reservados.</p>
-                    </div>
+                    <p class="footer-description">Sua água e gás com rapidez e confiança. Qualidade garantida em cada entrega.</p>
                 </div>
-                
-                <div class="footer-info">
-                    <div class="footer-section">
-                        <h4>Trabalhe Conosco</h4>
-                        <div class="careers-simple">
-                            <p>Envie seu currículo para:</p>
-                            <a href="mailto:contato@norteaguaegas.com.br" class="careers-email-simple">
-                                <i class="fas fa-envelope"></i>
-                                contato@norteaguaegas.com.br
+
+                <!-- Card Trabalhe Conosco -->
+                <div class="footer-card">
+                    <h4><i class="fas fa-briefcase"></i> Trabalhe Conosco</h4>
+                    <p>Interessado em fazer parte da nossa equipe?</p>
+                    <a href="mailto:contato@norteaguaegas.com.br" class="careers-email">
+                        <i class="fas fa-envelope"></i>
+                        contato@norteaguaegas.com.br
+                    </a>
+                </div>
+
+                <!-- Card Desenvolvedor -->
+                <div class="footer-card">
+                    <h4><i class="fas fa-code"></i> Desenvolvimento</h4>
+                    <div class="developer-info">
+                        <span>Desenvolvido por</span>
+                        <div class="tgm-logo">
+                            <img src="./images/sistemastgm.png" alt="Sistemas TGM" class="tgm-logo-img">
+                            <a href="https://www.instagram.com/sistemastgm/" target="_blank" class="tgm-name-link">
+                                Sistemas TGM
                             </a>
                         </div>
-                        <div class="developer-section">
-                            <div class="tgm-container">
-                                <span class="developer-text">Criado e Desenvolvido por</span>
-                                <div class="tgm-logo">
-                                    <img src="./images/sistemastgm.png" alt="Sistemas TGM" class="tgm-logo-img">
-                                    <a href="https://www.instagram.com/sistemastgm/" target="_blank" class="tgm-name-link">
-                                        <span class="tgm-name">Sistemas TGM</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Norte Água e Gás. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -1254,101 +1388,7 @@
             });
         }
 
-        // Controle dos banners desktop
-        let currentBanner = 0;
-        const totalBanners = 2;
-        let bannerInterval;
 
-        // Controle dos banners mobile
-        let currentBannerMobile = 0;
-        let bannerMobileInterval;
-
-        function changeBanner(direction) {
-            currentBanner = (currentBanner + direction + totalBanners) % totalBanners;
-            updateBanner();
-        }
-
-        function goToBanner(index) {
-            currentBanner = index;
-            updateBanner();
-        }
-
-        function updateBanner() {
-            const container = document.getElementById('bannerContainer');
-            const indicators = document.querySelectorAll('.hero-desktop .banner-indicator');
-            
-            // Atualiza a posição do banner
-            container.style.transform = `translateX(-${currentBanner * 50}%)`;
-            
-            // Atualiza os indicadores
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentBanner);
-            });
-        }
-
-        // Funções para o banner mobile
-        function changeBannerMobile(direction) {
-            currentBannerMobile = (currentBannerMobile + direction + totalBanners) % totalBanners;
-            updateBannerMobile();
-        }
-
-        function goToBannerMobile(index) {
-            currentBannerMobile = index;
-            updateBannerMobile();
-        }
-
-        function updateBannerMobile() {
-            const container = document.getElementById('bannerContainerMobile');
-            const indicators = document.querySelectorAll('.hero-mobile .banner-indicator');
-            
-            // Atualiza a posição do banner
-            container.style.transform = `translateX(-${currentBannerMobile * 50}%)`;
-            
-            // Atualiza os indicadores
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentBannerMobile);
-            });
-        }
-
-        // Auto-play dos banners desktop
-        function startBannerAutoPlay() {
-            bannerInterval = setInterval(() => {
-                changeBanner(1);
-            }, 5000); // Troca a cada 5 segundos
-        }
-
-        function stopBannerAutoPlay() {
-            clearInterval(bannerInterval);
-        }
-
-        // Auto-play dos banners mobile
-        function startBannerMobileAutoPlay() {
-            bannerMobileInterval = setInterval(() => {
-                changeBannerMobile(1);
-            }, 5000); // Troca a cada 5 segundos
-        }
-
-        function stopBannerMobileAutoPlay() {
-            clearInterval(bannerMobileInterval);
-        }
-
-        // Iniciar auto-play quando a página carregar
-        document.addEventListener('DOMContentLoaded', function() {
-            startBannerAutoPlay();
-            startBannerMobileAutoPlay();
-            
-            // Pausar auto-play quando o mouse estiver sobre o banner desktop
-            const bannerWrapper = document.querySelector('.hero-desktop .hero-banner-wrapper');
-            bannerWrapper.addEventListener('mouseenter', stopBannerAutoPlay);
-            bannerWrapper.addEventListener('mouseenter', stopBannerMobileAutoPlay);
-            bannerWrapper.addEventListener('mouseleave', startBannerAutoPlay);
-            bannerWrapper.addEventListener('mouseleave', startBannerMobileAutoPlay);
-            
-            // Pausar auto-play quando o mouse estiver sobre o banner mobile
-            const bannerMobileWrapper = document.querySelector('.hero-mobile .hero-banner-wrapper');
-            bannerMobileWrapper.addEventListener('mouseenter', stopBannerMobileAutoPlay);
-            bannerMobileWrapper.addEventListener('mouseleave', startBannerMobileAutoPlay);
-        });
     </script>
 </body>
 </html>
